@@ -1,37 +1,18 @@
 ## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/pmdun/ben-eater-eeprom-sketch-improved/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+You can use the [editor on GitHub](https://github.com/pmdun/ben-eater-eeprom-sketch-improved/edit/master/README.md)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This is a update I made to ben-eater sketch that enable you to program up to 16k using a nano.
+this sketch saves the rom image to the nanos 32k internal memory
 
-### Markdown
+first you do a hexdump using the example below then copy the content to the arduino sketch and then you past it in to the line:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+const byte Rom[] PROGMEM = {(hexdump contents of nameOfRom txt)please past here!};
 
-```markdown
-Syntax highlighted code block
+then compile and upload sketch
 
-# Header 1
-## Header 2
-### Header 3
+good example of 0xff, format dump for ben eater eeprom programmer using hexdump that works!
 
-- Bulleted
-- List
+hexdump -v -e '/1 "0x"' -e '/1 "%02x, "'  nameOfRom.hex > nameOfRom.txt
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/pmdun/ben-eater-eeprom-sketch-improved/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+P M Dunne.
